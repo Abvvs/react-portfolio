@@ -1,6 +1,14 @@
 import Button from "../components/Button";
-import { ArrowRight, ChevronDown, Github, Instagram, Linkedin } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Download,
+  Github,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
+import { useTranslation } from "react-i18next";
 const skills = [
   "React",
   "JavaScript",
@@ -20,6 +28,7 @@ const skills = [
   "GitHub",
 ];
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* BG */}
@@ -55,50 +64,67 @@ const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />{" "}
-                Information Technology (IT) Engineering ● Full Stack Developer
+                {t("hero.badge")}
               </span>
             </div>
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting{" "}
+                {t("hero.title.line1")}{" "}
                 <span className="text-primary glow-text">
-                  reliable software
+                  {t("hero.title.highlight")}
                 </span>
                 <br />
-                designed for
+                {t("hero.title.line2")}
                 <br />
                 <span className="font-serif italic font-normal text-white">
-                  real users.
+                  {t("hero.title.italic")}
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I’m Abigail Sánchez, an Information Technology Engineer with
-                hands-on experience building web applications using React,
-                Python, and modern frontend tools. I focus on creating clean,
-                functional interfaces and reliable systems that solve real-world
-                problems.
+                {t("hero.description")}
               </p>
             </div>
             {/* CALL TO ACTION SECTION */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact me
+              <Button
+                size="lg"
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                {t("hero.ctaPrimary")}
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton />
+              <AnimatedBorderButton
+                href="/cv/Abigail Sánchez_FULLSTACK _JR_Es.pdf"
+                download
+              >
+                <Download className="w-5 h-5" /> {t("hero.ctaSecondary")}
+              </AnimatedBorderButton>
             </div>
             {/* Social Links */}
             <div className="flex items-center animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me:</span>
+              <span className="text-sm text-muted-foreground">
+                {t("hero.follow")}
+              </span>
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Instagram, href: "#" },
+                { icon: Github, href: "https://github.com/Abvvs/" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/abi-sanchez/",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/abvvs.dev?igsh=MW5zbWczMmc1NnExdA==",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
+                  target="_blank"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
@@ -121,7 +147,7 @@ const Hero = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <span className="text-sm font-medium">
-                      Available for work
+                      {t("hero.availability")}
                     </span>
                   </div>
                 </div>
@@ -129,7 +155,7 @@ const Hero = () => {
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
                   <div className="text-2xl font-bold text-primary">2+</div>
                   <div className="text-xs text-muted-foreground">
-                    Years Exp.
+                    {t("hero.years")}
                   </div>
                 </div>
               </div>
@@ -138,12 +164,16 @@ const Hero = () => {
         </div>
         {/* Skills */}
         <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            {t("hero.techTitle")}
+          </p>
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
                 <div key={idx} className="shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors  ">{skill}</span>
+                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors  ">
+                    {skill}
+                  </span>
                 </div>
               ))}
             </div>
@@ -152,9 +182,14 @@ const Hero = () => {
       </div>
       {/* Scroll down */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
-        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary">
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <ChevronDown className="w-6 h-6 animate-bounce"/>
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+        >
+          <span className="text-xs uppercase tracking-wider">
+            {t("hero.scroll")}
+          </span>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
     </section>

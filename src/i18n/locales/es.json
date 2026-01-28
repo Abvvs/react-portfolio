@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "contactButton": "Contáctame"
+  },
+  "hero": {
+    "badge": "Ingeniería en Tecnologías de la Información ● Full Stack Developer",
+    "title": {
+      "line1": "Desarrollo",
+      "highlight": "software confiable",
+      "line2": "completo y",
+      "italic": "escalable"
+    },
+    "description": "Hola, soy Abigail Sánchez. Desarrollo aplicaciones web usando React, Python y tecnologías modernas. Me enfoco en construir soluciones claras, funcionales y bien estructuradas para problemas reales.",
+    "ctaPrimary": "Contáctame",
+    "ctaSecondary": "Descargar CV",
+    "follow": "Sígueme:",
+    "availability": "Disponible para trabajar",
+    "years": "Años Exp.",
+    "scroll": "Desplázate",
+    "techTitle": "Tecnologías con las que trabajo"
+  },
+  "about": {
+    "label": "Sobre mí",
+    "title": "Construyendo soluciones web modernas,",
+    "titleItalic": "de principio a fin.",
+    "paragraphs": [
+      "Ingeniera en Tecnologías de la Información con experiencia práctica en el diseño y desarrollo de aplicaciones web y móviles utilizando Python, JavaScript, Java y Dart, así como bases de datos relacionales como PostgreSQL.",
+      "Apasionada por la tecnología, la inteligencia artificial y la ingeniería de software, con una fuerte capacidad para simplificar conceptos complejos y entregar soluciones eficientes, mantenibles y escalables."
+    ],
+    "cards": {
+      "cleanCode": {
+        "title": "Código limpio",
+        "text": "Escribo código claro, legible y mantenible, siguiendo buenas prácticas que facilitan la escalabilidad y el trabajo a largo plazo."
+      },
+      "performance": {
+        "title": "Enfoque en rendimiento",
+        "text": "Optimizo componentes y flujos de trabajo para mejorar el rendimiento y ofrecer experiencias de usuario fluidas."
+      },
+      "ux": {
+        "title": "Diseño centrado en el usuario",
+        "text": "Desarrollo interfaces pensando en la usabilidad y accesibilidad, priorizando siempre las necesidades reales del usuario."
+      },
+      "problemSolving": {
+        "title": "Resolución de problemas",
+        "text": "Disfruto transformar requerimientos complejos en soluciones técnicas prácticas y bien estructuradas."
+      }
+    }
+  },
+  "projects": {
+    "label": "Trabajo",
+    "title": "Proyectos que",
+    "titleItalic": "generan impacto.",
+    "description": "Algunos de mis trabajos, desde aplicaciones web complejas hasta herramientas innovadoras que resuelven problemas reales.",
+    "items": {
+      "sccad": {
+        "title": "Dashboard de Gestión Topográfica SCCAD",
+        "description": "Panel web desarrollado para una oficina de topografía, orientado a la gestión de proyectos, trabajos de campo, trámites y clientes. Construido con React y Tailwind CSS, utilizando componentes reutilizables, hooks y tipado para mejorar la mantenibilidad y la experiencia de uso."
+      },
+      "billar": {
+        "title": "Sistema de Gestión Billar Boulevard",
+        "description": "Proyecto freelance full stack desarrollado con Django para la gestión de productos, inventario, compras, ventas y actividad de empleados. Incluye lógica de negocio, relaciones complejas de base de datos y flujos operativos para uso diario."
+      },
+      "landing": {
+        "title": "Landing Page Empresarial",
+        "description": "Landing page responsiva desarrollada con Vue.js, enfocada en una estructura limpia, buen rendimiento y una experiencia de usuario clara y adaptable a distintos dispositivos."
+      },
+      "portfolio": {
+        "title": "Portafolio Profesional",
+        "description": "Sitio web personal diseñado para presentar proyectos, habilidades técnicas y experiencia profesional de forma clara y atractiva."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Construyamos algo",
+    "titleItalic": "significativo juntos.",
+    "description": "¿Tienes un proyecto en mente o necesitas ayuda para llevar una idea a la realidad? Me encantaría escucharte y explorar cómo podemos trabajar juntos.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje...",
+      "submit": "Enviar mensaje"
+    },
+    "info": {
+      "title": "Información de contacto",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "availability": "Actualmente disponible",
+      "availabilityText": "Estoy abierta a nuevas oportunidades y proyectos interesantes. Ya sea un puesto fijo o un proyecto freelance, ¡conversemos!"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "common": {
+    "sending": "Enviando..."
+  }
+}

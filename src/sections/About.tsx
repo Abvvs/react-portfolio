@@ -1,32 +1,29 @@
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const higlights = [
   {
     icon: Code2,
-    title: "Clean Code",
-    description:
-      "I write clear, readable, and maintainable code following best practices for long-term scalability.",
+    key: "cleanCode",
   },
   {
     icon: Rocket,
-    title: "Performance Focus",
-    description:
-      "I optimize components and workflows to improve performance and deliver smooth user experiences.",
+    key: "performance",
   },
   {
     icon: Users,
-    title: "User-Centered Design",
-    description:
-      "I build interfaces with usability and accessibility in mind, focusing on real user needs.",
+    key: "ux",
   },
   {
     icon: Lightbulb,
-    title: "Problem Solving",
-    description:
-      "I enjoy turning complex requirements into practical, well-structured technical solutions.",
+    key: "problemSolving",
   },
 ];
 const About = () => {
+  const { t } = useTranslation();
+  const paragraphs = t("about.paragraphs", {
+    returnObjects: true,
+  }) as string[];
   return (
     <section id="about" className="p-32 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -35,29 +32,25 @@ const About = () => {
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
-                About Me
+                {t("about.label")}
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building modern web solutions,
+              {t("about.title")}
               <span className="font-serif italic font-normal text-white">
                 {" "}
-                end to end.
+                {t("about.titleItalic")}
               </span>
             </h2>
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-              <p>
-                Information Technology Engineer with hands-on experience
-                designing and developing web and mobile applications using
-                Python, JavaScript, Java, and Dart, as well as relational
-                databases such as PostgreSQL. Strong background in information
-                security, backend development, and system implementation.
-              </p>
-              <p>
-                Passionate about technology, AI, and software engineering, with
-                a strong ability to simplify complex concepts and deliver
-                effective, maintainable solutions.
-              </p>
+              {paragraphs.map((text, index) => (
+                <p
+                  key={index}
+                  className="text-muted-foreground leading-relaxed"
+                >
+                  {text}
+                </p>
+              ))}
             </div>
           </div>
           {/* columna derecha hilights*/}
@@ -71,8 +64,12 @@ const About = () => {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="text-lg font-semibold mb-2">
+                  {t(`about.cards.${item.key}.title`)}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {t(`about.cards.${item.key}.text`)}
+                </p>
               </div>
             ))}
           </div>
