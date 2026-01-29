@@ -190,6 +190,9 @@ const Contact = () => {
                   </div>
                 )}
               </form>
+              <p className="text-xs text-muted-foreground text-center mt-3">
+                {t("contact.form.copy")}
+              </p>
             </div>
             {/* Contact Info */}
             <div className="space-y-6 animate-fade-in animation-delay-400">

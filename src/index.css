@@ -126,6 +126,13 @@
   .animation-delay-800{
     animation-delay: 800ms;
   }
+  @media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-float,
+  .animate-marquee {
+    animation: none;
+  }
+}
   
   
 }

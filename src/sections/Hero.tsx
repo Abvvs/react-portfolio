@@ -135,7 +135,7 @@ const Hero = () => {
           {/* columna derecha - Profile img */}
           <div className="relative animate-fade-in animation-delay-300">
             {/* profile img */}
-            <div className="relative max-w-md mx-auto">
+            <div className="relative max-w-xs sm:max-w-md mx-auto">
               <div className="relative p-2">
                 <img
                   src="/ProfileAbigail.PNG"
