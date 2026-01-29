@@ -87,7 +87,8 @@
       "messagePlaceholder": "Your message...",
       "submit": "Send Message",
       "success": "Message sent successfully!",
-      "error": "Failed to send message. Please try again."
+      "error": "Failed to send message. Please try again.",
+      "copy":"No spam. I respond personally."
     },
     "info": {
       "title": "Contact Information",
@@ -105,6 +106,8 @@
     "contact": "Contact"
   },
   "common": {
-    "sending": "Sending..."
+    "sending": "Sending...",
+    "showMore": "Show more",
+    "showLess": "Show less"
   }
 }

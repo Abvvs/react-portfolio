@@ -82,10 +82,13 @@
       "name": "Nombre",
       "namePlaceholder": "Tu nombre",
       "email": "Correo electrónico",
-      "emailPlaceholder": "tu@email.com",
+      "emailPlaceholder": "Correo para contactarte",
       "message": "Mensaje",
-      "messagePlaceholder": "Escribe tu mensaje...",
-      "submit": "Enviar mensaje"
+      "messagePlaceholder": "Cuéntame sobre tu proyecto",
+      "submit": "Enviar mensaje",
+      "success": "Se ha enviado correctamente!",
+      "error": "Error al enviar el correo. Por favor intenta más tarde.",
+      "copy":"No spam. Respondo personalmente."
     },
     "info": {
       "title": "Información de contacto",
@@ -103,6 +106,8 @@
     "contact": "Contacto"
   },
   "common": {
-    "sending": "Enviando..."
+    "sending": "Enviando...",
+    "showMore": "Ver más",
+    "showLess": "Ver menos"
   }
 }

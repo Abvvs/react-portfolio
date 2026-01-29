@@ -1,31 +1,31 @@
 import { ArrowUpRight, Github } from "lucide-react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
 
 const projects = [
   {
-    key:"sccad",
+    key: "sccad",
     image: "/projects/project1.png",
     tags: ["React", "Tailwind CSS", "Django", "TypeScript", "PostgreSQL"],
     link: "#",
     github: "https://github.com/Abvvs/react-sccad-app",
   },
   {
-    key:"billar",
+    key: "billar",
     image: "/projects/project2.png",
     tags: ["Django", "Python", "PostgreSQL", "Full Stack"],
     link: "https://boulevard-billar.com/",
     github: "https://github.com/Abvvs/bulevar-gestion",
   },
   {
-   key:"landing",
+    key: "landing",
     image: "/projects/project3.png",
     tags: ["Vue.js", "Responsive Design", "UI"],
     link: "https://binesai.vercel.app/",
     github: "https://github.com/crycodex/binesai/branches",
   },
   {
-    key:"portfolio",
+    key: "portfolio",
     image: "/projects/project4.png",
     tags: ["Vue.js", "Responsive Design", "UI"],
     link: "#",
@@ -35,8 +35,12 @@ const projects = [
 
 const Projects = () => {
   const { t } = useTranslation();
+  const [expanded, setExpanded] = useState<string | null>(null);
   return (
-    <section id="projects" className="p-32 relative overflow-hidden">
+    <section
+      id="projects"
+      className="py-24 px-4 sm:px-6 lg:px-32 relative overflow-hidden"
+    >
       {/* Bg */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -73,7 +77,7 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60" />
                 {/* overlay links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
                     target="_blank"
@@ -91,19 +95,36 @@ const Projects = () => {
                 </div>
               </div>
               {/* project description */}
-              <div className="p-6 space-y-4 ">
+              <div className="p-4 sm:p-6 space-y-4 ">
                 <div className="flex items-start justify-between">
-                  <h3 className=" text-xl font-semibold group-hover:text-primary transition-colors">
+                  <h3 className=" text-lg sm:text-xl font-semibold leading-snug group-hover:text-primary transition-colors">
                     {t(`projects.items.${project.key}.title`)}
                     <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p
+                  className={`text-muted-foreground text-sm leading-relaxed ${
+                    expanded === project.key ? "" : "line-clamp-3"
+                  }`}
+                >
                   {t(`projects.items.${project.key}.description`)}
                 </p>
+                <button
+                  onClick={() =>
+                    setExpanded(expanded === project.key ? null : project.key)
+                  }
+                  className="text-xs text-primary hover:underline mt-2 sm:hidden"
+                >
+                  {expanded === project.key ? "Ver menos" : "Ver más"}
+                </button>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300">{tag}</span>
+                    <span
+                      key={i}
+                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
